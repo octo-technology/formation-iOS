@@ -25,10 +25,10 @@ class CharacterTableViewCell: UITableViewCell {
     
     func configureCell(character: Character) {
         nameLabel.text = character.name
-        weightLabel.text = character.weight
-        heightLabel.text = character.height
-        originLabel.text = character.origin
-        portraitImageView.image = UIImage(named: character.portrait)
+        weightLabel.text = character.mass?.toMassString()
+        heightLabel.text = character.height?.toHeightString()
+        originLabel.text = character.species
+        portraitImageView.downloaded(from: character.image)
     }
 
 }

@@ -6,12 +6,13 @@
 //
 
 import Foundation
-import UIKit
 
-struct Character {
-    let name: String
-    let weight: String
-    let height: String
-    let origin: String
-    let portrait: String
+struct Character: Codable {
+    var id: Int = 0
+    var name: String = ""
+    var mass: Double? = 0
+    var height: Double? = 0
+    var species: String? = ""
+    var eyeColor: String? = ""
+    var image: String = ""
 }
