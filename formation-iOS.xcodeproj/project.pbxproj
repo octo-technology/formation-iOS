@@ -43,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		298F2BEE27DBA86D007FB25B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C9992FB527DB85B200084571 /* Character.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		298F2BF027DBA8E8007FB25B /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		298F2BF127DBA90A007FB25B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C9992FA127DB597D00084571 /* MyTableViewController.swift */,
+				C9992FB327DB68FF00084571 /* CharacterTableViewCell.swift */,
+				C9992FB727DB8B2C00084571 /* HeaderTableViewCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		C9992F9127DB597D00084571 = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +87,11 @@
 		C9992F9C27DB597D00084571 /* formation-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				298F2BF127DBA90A007FB25B /* view */,
+				298F2BF027DBA8E8007FB25B /* presenter */,
+				298F2BEE27DBA86D007FB25B /* model */,
 				C9992F9D27DB597D00084571 /* AppDelegate.swift */,
 				C9992F9F27DB597D00084571 /* SceneDelegate.swift */,
-				C9992FA127DB597D00084571 /* MyTableViewController.swift */,
-				C9992FB327DB68FF00084571 /* CharacterTableViewCell.swift */,
-				C9992FB727DB8B2C00084571 /* HeaderTableViewCell.swift */,
-				C9992FB527DB85B200084571 /* Character.swift */,
 				C9992FA327DB597D00084571 /* Main.storyboard */,
 				C9992FA627DB598100084571 /* Assets.xcassets */,
 				C9992FA827DB598100084571 /* LaunchScreen.storyboard */,
