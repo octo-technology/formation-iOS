@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol CharacterDetailDelegate: AnyObject {
+    func didChooseSide(side: Side, for character: Character)
+}
+
 class MyTableViewController: UIViewController {
-    let viewModel = CharacterVM()
-    var characters: [Character] = []
+
     @IBOutlet weak var tableView: UITableView!
+    
+    let viewModel = CharacterViewModel()
+    var characters: [Character] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +47,19 @@ extension MyTableViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "DetailCharacter", bundle: .main)
+        let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController", creator: { [weak self] coder -> DetailCharacterViewController? in
+            DetailCharacterViewController(coder: coder, charactere: (self?.characters[indexPath.row])!)
+        })
+        
+        detailViewController.delegate = self
+        navigationController?.pushViewController(detailViewController, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! HeaderTableViewCell
         
@@ -51,6 +70,12 @@ extension MyTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
+}
+
+extension MyTableViewController: CharacterDetailDelegate {
     
+    func didChooseSide(side: Side, for character: Character) {
+        
+    }
 }
 

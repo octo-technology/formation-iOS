@@ -23,10 +23,15 @@ class CharacterTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+<<<<<<< Updated upstream:formation-iOS/view/CharacterTableViewCell.swift
     override func prepareForReuse() {
         super.prepareForReuse()
         
         resetCell()
+=======
+    func setDelegate(delegate: CellDelegate) {
+        self.delegate = delegate
+>>>>>>> Stashed changes:formation-iOS/CharacterTableViewCell.swift
     }
     
     func configureCell(character: Character) {
@@ -44,5 +49,4 @@ class CharacterTableViewCell: UITableViewCell {
         heightLabel.text = ""
         originLabel.text = ""
     }
-
 }

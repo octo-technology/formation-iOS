@@ -1,0 +1,96 @@
+//
+//  ViewController.swift
+//  formation-iOS
+//
+//  Created by julien.pechon.
+//
+
+import UIKit
+
+protocol CellDelegate: AnyObject {
+    func didChooseSide(for cell: CharacterTableViewCell)
+}
+
+class MyTableViewController: UIViewController {
+<<<<<<< Updated upstream:formation-iOS/view/MyTableViewController.swift
+    let viewModel = CharacterVM()
+    var characters: [Character] = []
+    @IBOutlet weak var tableView: UITableView!
+=======
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let characterArray = [
+        Character(name: "Luke Skywalker", weight: "73", height: "172", origin: "tatooine", portrait: "Luke"),
+        Character(name: "C-3PO", weight: "75", height: "171", origin: "tatooine", portrait: "C3PO"),
+        Character(name: "R2-D2", weight: "32", height: "109", origin: "naboo", portrait: "R2"),
+        Character(name: "Darth Vader", weight: "120", height: "203", origin: "tatooine", portrait: "Vador"),
+        Character(name: "Leia Organa", weight: "51", height: "150", origin: "alderaan", portrait: "Leia")
+    ]
+>>>>>>> Stashed changes:formation-iOS/MyTableViewController.swift
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Task {
+            self.characters = await self.viewModel.getCharacters()
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "Star Wars"
+    }
+}
+
+extension MyTableViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return characters.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CharacterTableViewCell
+            
+<<<<<<< Updated upstream:formation-iOS/view/MyTableViewController.swift
+        cell.configureCell(character: characters[indexPath.row])
+        
+=======
+        cell.configureCell(character: characterArray[indexPath.row])
+>>>>>>> Stashed changes:formation-iOS/MyTableViewController.swift
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "DetailCharacter", bundle: .main)
+        let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController", creator: { [weak self] coder -> DetailViewController? in
+            DetailViewController(coder: coder, charactere: (self?.characterArray[indexPath.row])!)
+        })
+        
+        navigationController?.pushViewController(detailViewController, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! HeaderTableViewCell
+        
+        headerCell.titleLabel.text = "Personnages"
+        return headerCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+}
+
+extension MyTableViewController: CellDelegate {
+    func didChooseSide(for cell: CharacterTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        cell.backgroundColor = .red
+        tableView.reloadData()
+    }
+}
+

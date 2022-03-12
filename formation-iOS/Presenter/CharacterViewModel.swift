@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CharacterVM {
+class CharacterViewModel {
     var characters: [Character]?
     
     func getCharacters() async -> [Character] {

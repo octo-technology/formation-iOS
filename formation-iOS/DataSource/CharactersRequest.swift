@@ -10,10 +10,10 @@ import Foundation
 struct CharactersFetcher {
     
     enum CharactersFetcherError: Error {
-            case invalidURL
-            case missingData
-            case invalidServerResponse
-        }
+        case invalidURL
+        case missingData
+        case invalidServerResponse
+    }
     
     func fetchCharactersWithAsyncURLSession() async throws -> [Character] {
         
