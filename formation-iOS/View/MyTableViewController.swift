@@ -75,7 +75,11 @@ extension MyTableViewController: UITableViewDelegate, UITableViewDataSource {
 extension MyTableViewController: CharacterDetailDelegate {
     
     func didChooseSide(side: Side, for character: Character) {
+        let alert = UIAlertController(title: "Je suis un titre mais je n'ai pas d'inspiration", message: "Donnée enregistrée pour : \(character.name)", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

@@ -33,13 +33,13 @@ class DetailCharacterViewController: UIViewController {
     }
     
     @IBAction func didTapLightSide() {
-        delegate?.didChooseSide(side: .Light, for: character)
         navigationController?.popViewController(animated: true)
+        delegate?.didChooseSide(side: .Light, for: character)
     }
     
     @IBAction func didTapDarkSide() {
-        delegate?.didChooseSide(side: .Dark, for: character)
         navigationController?.popViewController(animated: true)
+        delegate?.didChooseSide(side: .Dark, for: character)
     }
 
 }
