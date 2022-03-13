@@ -23,12 +23,25 @@ class CharacterTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        resetCell()
+    }
+    
     func configureCell(character: Character) {
         nameLabel.text = character.name
-        weightLabel.text = character.weight
-        heightLabel.text = character.height
-        originLabel.text = character.origin
-        portraitImageView.image = UIImage(named: character.portrait)
+        weightLabel.text = character.mass?.toMassString()
+        heightLabel.text = character.height?.toHeightString()
+        originLabel.text = character.species
+        portraitImageView.downloaded(from: character.image)
     }
-
+    
+    private func resetCell() {
+        portraitImageView.image = UIImage(named: "")
+        nameLabel.text = ""
+        weightLabel.text = ""
+        heightLabel.text = ""
+        originLabel.text = ""
+    }
 }
