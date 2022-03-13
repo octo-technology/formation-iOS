@@ -19,16 +19,19 @@ struct CharactersFetcher {
         
         let urlString = "https://akabab.github.io/starwars-api/api/all.json"
         
+        // 1. Créer URL
         guard let url = URL(string: urlString) else {
             throw CharactersFetcherError.invalidURL
         }
         
+        // 2. Créer URLSession
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpsResponse = response as? HTTPURLResponse, httpsResponse.statusCode == 200 else {
             throw CharactersFetcherError.invalidServerResponse
         }
         
+        // 3.Parser la réponse
         var result: [Character]?
         do {
             result = try JSONDecoder().decode([Character].self, from: data)
