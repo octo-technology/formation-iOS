@@ -12,6 +12,8 @@
 		298F2BFB27DBF36C007FB25B /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F2BFA27DBF36C007FB25B /* CharactersRequest.swift */; };
 		298F2BFE27DC0C4D007FB25B /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F2BFD27DC0C4D007FB25B /* Double+Ext.swift */; };
 		298F2C0027DC0C69007FB25B /* ImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F2BFF27DC0C69007FB25B /* ImageView+Ext.swift */; };
+		C9003E2F27DE8A6600B90152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9003E2E27DE8A6600B90152 /* GoogleService-Info.plist */; };
+		C9005C7127DE45A500A49C83 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C9005C7027DE45A500A49C83 /* FirebaseMessaging */; };
 		C9992F9E27DB597D00084571 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9992F9D27DB597D00084571 /* AppDelegate.swift */; };
 		C9992FA027DB597D00084571 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9992F9F27DB597D00084571 /* SceneDelegate.swift */; };
 		C9992FA227DB597D00084571 /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9992FA127DB597D00084571 /* MyTableViewController.swift */; };
@@ -31,6 +33,7 @@
 		298F2BFA27DBF36C007FB25B /* CharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
 		298F2BFD27DC0C4D007FB25B /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		298F2BFF27DC0C69007FB25B /* ImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext.swift"; sourceTree = "<group>"; };
+		C9003E2E27DE8A6600B90152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9005C6D27DD515500A49C83 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9992F9A27DB597D00084571 /* formation-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "formation-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9992F9D27DB597D00084571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9005C7127DE45A500A49C83 /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +149,7 @@
 		C9992FC027DD494700084571 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				C9003E2E27DE8A6600B90152 /* GoogleService-Info.plist */,
 				C9992FA827DB598100084571 /* LaunchScreen.storyboard */,
 				C9992FA627DB598100084571 /* Assets.xcassets */,
 				C9005C6D27DD515500A49C83 /* Info.plist */,
@@ -177,6 +182,9 @@
 			dependencies = (
 			);
 			name = "formation-iOS";
+			packageProductDependencies = (
+				C9005C7027DE45A500A49C83 /* FirebaseMessaging */,
+			);
 			productName = "formation-iOS";
 			productReference = C9992F9A27DB597D00084571 /* formation-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -205,6 +213,9 @@
 				Base,
 			);
 			mainGroup = C9992F9127DB597D00084571;
+			packageReferences = (
+				C9005C6F27DE45A500A49C83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C9992F9B27DB597D00084571 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +232,7 @@
 			files = (
 				C9992FAA27DB598100084571 /* LaunchScreen.storyboard in Resources */,
 				C9992FBA27DBA2D700084571 /* DetailCharacter.storyboard in Resources */,
+				C9003E2F27DE8A6600B90152 /* GoogleService-Info.plist in Resources */,
 				C9992FA727DB598100084571 /* Assets.xcassets in Resources */,
 				C9992FA527DB597D00084571 /* Main.storyboard in Resources */,
 			);
@@ -303,6 +315,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development: Julien Pechon (27GW435MKM)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -321,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -364,6 +378,8 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development: Julien Pechon (27GW435MKM)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -376,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -391,7 +407,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PN3J7J93H;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -408,6 +425,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.octo.formation-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Formation iOS - DEV";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -419,7 +437,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8PN3J7J93H;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -436,6 +455,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.octo.formation-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Formation iOS - DEV";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,6 +484,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9005C6F27DE45A500A49C83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9005C7027DE45A500A49C83 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9005C6F27DE45A500A49C83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9992F9227DB597D00084571 /* Project object */;
 }
