@@ -38,7 +38,7 @@ class CharacterTableViewCell: UITableViewCell {
     }
     
     private func resetCell() {
-        portraitImageView.image = UIImage(named: "")
+        portraitImageView.image = nil
         nameLabel.text = ""
         weightLabel.text = ""
         heightLabel.text = ""
