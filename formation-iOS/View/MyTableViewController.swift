@@ -31,6 +31,17 @@ class MyTableViewController: UIViewController {
         
         self.navigationItem.title = "Star Wars"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "detailSegueIdentifier") {
+            // pass data to next view
+        }
+    }
+    
+    @IBAction func onTapDetailSegue(_ sender: Any) {
+        performSegue(withIdentifier: "detailSegueIdentifier", sender: nil)
+    }
+    
 }
 
 extension MyTableViewController: UITableViewDelegate, UITableViewDataSource {
