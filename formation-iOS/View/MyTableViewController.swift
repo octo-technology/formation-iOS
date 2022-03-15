@@ -60,7 +60,7 @@ extension MyTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "DetailCharacter", bundle: .main)
+        let storyboard = UIStoryboard(name: DetailCharacterViewController.storyboardName, bundle: .main)
         let detailViewController = storyboard.instantiateViewController(identifier: "DetailViewController", creator: { [weak self] coder -> DetailCharacterViewController? in
             DetailCharacterViewController(coder: coder, charactere: (self?.characters[indexPath.row])!)
         })
